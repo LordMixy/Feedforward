@@ -8,9 +8,6 @@
 #include <cstdio>
 #include <random>
 
-// sigmoid
-// xavier
-
 namespace NeuralNetwork
 {
 	template <std::size_t N> 
@@ -237,8 +234,6 @@ int main()
 
 	xorNetwork.train(TRAIN_ITERATIONS);
 	xnorNetwork.train(TRAIN_ITERATIONS);
-
-	// C++23 std::views::zip
 	
 	for (const auto& input : keys(trainDataXOR))
 	{
