@@ -61,18 +61,18 @@ namespace NeuralNetwork
 
 		vec<M> feedForward(const vec<N>& inputs)
 		{
-            vec<M> sigmoids;
-            for (std::size_t i = 0; i < M; ++i)
-            {
-                double dotProduct = bias[i];
-                for (std::size_t j = 0; j < N; ++j)
-                {
-                    dotProduct += weights[i][j] * inputs[j];
-                }
-
-                sigmoids[i] = sigmoid(dotProduct);
-            }
-            return sigmoids;
+	            vec<M> sigmoids;
+	            for (std::size_t i = 0; i < M; ++i)
+	            {
+	                double dotProduct = bias[i];
+	                for (std::size_t j = 0; j < N; ++j)
+	                {
+	                    dotProduct += weights[i][j] * inputs[j];
+	                }
+	
+	                sigmoids[i] = sigmoid(dotProduct);
+	            }
+	            return sigmoids;
 		}
 	};
 
@@ -144,11 +144,11 @@ namespace NeuralNetwork
 			}			
 			output.xavierWeightInitialize(1);
 			
-            for (const auto& [key, value] : trainData) 
-            {
-            	inputs.push_back(key);
-            	targets.push_back(value);
-            }
+			for (const auto& [key, value] : trainData) 
+			{
+				inputs.push_back(key);
+				targets.push_back(value);
+			}
 		}
 
 		vec<M> computeHiddenLayersOutput(const vec<N>& inputs)
